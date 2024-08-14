@@ -35,7 +35,7 @@ from scipy.optimize import fsolve
 
 r_values = [24.73, 23, 22, 21]
 
-fig1 = plt.figure(1)
+ax = plt.figure(1).add_subplot(projection='3d')
 
 for i in range(len(r_values)):
     # Creating the object containing the eqs
@@ -79,7 +79,6 @@ for i in range(len(r_values)):
     #stable_int = odeint(mymodel.dynamics, x_2, time_array)
 
     # %%
-    ax = fig1.gca(projection='3d')
     ax.plot(sol_array[:,0], sol_array[:,1], sol_array[:,2], label="r= "+str(mymodel.r))
     #ax.plot_trisurf(pert_sol[:,0], pert_sol[:,1], pert_sol[:,2], antialiased=True, alpha=0.3)
     #ax.plot(integrator_sol[:, 0], integrator_sol[:,1], integrator_sol[:,2])

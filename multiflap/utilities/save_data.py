@@ -21,12 +21,12 @@ class SaveData:
         return print(filename+" file saved")
 
     def make_folder(self):
-        path = self.folder_results+'/'+self.simulation_name
+        path = os.path.join(self.folder_results, self.simulation_name)
         try:
-                os.mkdir(path)
-                print("Folder correctly created")
-        except:
-                print("Error in trying to create data folder")
+            os.makedirs(path, exist_ok=True)
+            print("Folder correctly created or already exists")
+        except Exception as e:
+            print(f"Error in trying to create data folder: {e}")
 
         return
 

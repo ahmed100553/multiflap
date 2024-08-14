@@ -67,7 +67,6 @@ class BirdModel:
 
 
     def get_wingstate(self, t):
-
 #        ws = WingState()
 
         # Shoulder motion

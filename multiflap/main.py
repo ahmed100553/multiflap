@@ -53,12 +53,15 @@ ms_obj = MultipleShooting(x0, M = 2, period=0.25, t_steps=70, model = mybird)
 
 # call the LMA solver
 mysol = Solver(ms_obj = ms_obj).lma()
+print(mysol[3])
 
 sol_array = mysol[3].space
 sol_time = mysol[3].time
 
+# define eigenvalues
+# eigenvalues = mysol[3].eigenvalues
 
 # save data
-SaveData(sim_name).save_data('multipliers_LC', eigenvalues)
+# SaveData(sim_name).save_data('multipliers_LC', eigenvalues)
 SaveData(sim_name).save_data('solution_LC', sol_array)
 SaveData(sim_name).save_data('time_array_LC', sol_time)
